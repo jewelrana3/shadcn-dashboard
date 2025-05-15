@@ -1,0 +1,91 @@
+import * as React from "react";
+import { Map, Settings2 } from "lucide-react";
+import logo from "../../public/logo.svg";
+import { NavMain } from "@/components/nav-main";
+import { NavProjects } from "@/components/nav-projects";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarHeader,
+  SidebarRail,
+} from "@/components/ui/sidebar";
+
+// This is sample data.
+const data = {
+  navMain: [
+    {
+      title: "Dashboard",
+      url: "/",
+      isActive: true,
+    },
+    {
+      title: "User",
+      url: "/user",
+    },
+    {
+      title: "Category",
+      url: "/category",
+    },
+    // {
+    //   title: "Limits",
+    //   url: "#",
+    //   items: [
+    //     {
+    //       title: "API",
+    //       url: "#",
+    //     },
+    //   ],
+    // },
+
+    {
+      title: "Settings",
+      url: "#",
+      icon: Settings2,
+      items: [
+        {
+          title: "Profile",
+          url: "/profile",
+        },
+        {
+          title: "Edit Profile",
+          url: "/edit-profile",
+        },
+        {
+          title: "About Us",
+          url: "/about",
+        },
+        {
+          title: "Privacy & Policy",
+          url: "Privacy-Policy",
+        },
+        {
+          title: "Terms & Conditions",
+          url: "terms-condition",
+        },
+      ],
+    },
+  ],
+  projects: [
+    {
+      name: "Travel",
+      url: "#",
+      icon: Map,
+    },
+  ],
+};
+
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  return (
+    <Sidebar {...props}>
+      <SidebarHeader className="flex items-center justify-center">
+        <img className="w-40" src={logo} alt="pic" />
+      </SidebarHeader>
+      <SidebarContent>
+        <NavMain items={data.navMain} />
+        <NavProjects projects={data.projects} />
+      </SidebarContent>
+
+      <SidebarRail />
+    </Sidebar>
+  );
+}

@@ -6,9 +6,11 @@ import { NavProjects } from "@/components/nav-projects";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { Link } from "react-router-dom";
 
 // This is sample data.
 const data = {
@@ -26,16 +28,6 @@ const data = {
       title: "Category",
       url: "/category",
     },
-    // {
-    //   title: "Limits",
-    //   url: "#",
-    //   items: [
-    //     {
-    //       title: "API",
-    //       url: "#",
-    //     },
-    //   ],
-    // },
 
     {
       title: "Settings",
@@ -81,11 +73,21 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <img className="w-40" src={logo} alt="pic" />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <div className="mt-6">
+          <NavMain items={data.navMain} />
+          <NavProjects projects={data.projects} />
+        </div>
       </SidebarContent>
 
       <SidebarRail />
+      <SidebarFooter className="mb-10 cursor-pointer">
+        <Link
+          to="/login"
+          className="flex items-center justify-center text-red-400"
+        >
+          <button className=" cursor-pointer">Logout</button>
+        </Link>
+      </SidebarFooter>
     </Sidebar>
   );
 }

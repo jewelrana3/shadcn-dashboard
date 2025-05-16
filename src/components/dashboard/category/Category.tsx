@@ -78,7 +78,7 @@ export function Category() {
                     <LiaEditSolid className="text-[#5C5C3D] text-[22px] cursor-pointer" />
                   </button>
                   <button onClick={handleDelete}>
-                    <RiDeleteBin6Line className=" text-[22px] cursor-pointer text-red-500" />
+                    <RiDeleteBin6Line className=" text-[22px] cursor-pointer text-red-400" />
                   </button>
                 </div>
               </TableCell>

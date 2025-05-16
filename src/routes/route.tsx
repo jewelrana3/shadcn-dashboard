@@ -9,6 +9,10 @@ import PrivacyPolicy from "@/components/setting/PrivacyPolicy";
 import TermsCondition from "@/components/setting/TermsCondition";
 import Profile from "@/components/profile/Profile";
 import EditProfile from "@/components/profile/EditProfile";
+import ResetPasswordForm from "@/pages/authentication/NewPassword";
+import Login from "@/pages/authentication/Login";
+import ForgetPassword from "@/pages/authentication/ForgetPassword";
+import VerifyOtp from "@/pages/authentication/VerifyOtp";
 // import Login from "../pages/authentication/Login";
 // import ErrorPage from "../pages/error/ErrorPage";
 // import Notification from "../pages/dashboard/Notification";
@@ -52,10 +56,10 @@ const router = createBrowserRouter([
       //   { path: "change-password", element: <ChangePassword /> },
     ],
   },
-  //   { path: "/login", element: <Login /> },
-  //   { path: "/forget-password", element: <ForgetPassword /> },
-  //   { path: "/verify-otp", element: <VerifyOtp /> },
-  //   { path: "/new-password", element: <NewPassword /> },
+  { path: "/login", element: <Login /> },
+  { path: "/forget-password", element: <ForgetPassword /> },
+  { path: "/verify-otp", element: <VerifyOtp /> },
+  { path: "/new-password", element: <ResetPasswordForm /> },
 ]);
 
 export default router;

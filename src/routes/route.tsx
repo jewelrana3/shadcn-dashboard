@@ -13,6 +13,7 @@ import ResetPasswordForm from "@/pages/authentication/NewPassword";
 import Login from "@/pages/authentication/Login";
 import ForgetPassword from "@/pages/authentication/ForgetPassword";
 import VerifyOtp from "@/pages/authentication/VerifyOtp";
+import ChangePassword from "@/components/profile/ChangePassword";
 // import Login from "../pages/authentication/Login";
 // import ErrorPage from "../pages/error/ErrorPage";
 // import Notification from "../pages/dashboard/Notification";
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
       //   { path: "notifications", element: <Notification /> },
       { path: "profile", element: <Profile /> },
       { path: "edit-profile", element: <EditProfile /> },
-      //   { path: "change-password", element: <ChangePassword /> },
+      { path: "change-password", element: <ChangePassword /> },
     ],
   },
   { path: "/login", element: <Login /> },

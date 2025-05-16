@@ -1,4 +1,4 @@
-"use client";
+("");
 
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom"; // or useRouter from next/navigation

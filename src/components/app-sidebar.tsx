@@ -43,6 +43,10 @@ const data = {
           url: "/edit-profile",
         },
         {
+          title: "Change Password",
+          url: "/change-password",
+        },
+        {
           title: "About Us",
           url: "/about",
         },

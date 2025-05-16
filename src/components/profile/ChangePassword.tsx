@@ -1,106 +1,110 @@
-import { ConfigProvider, Form, Input } from 'antd';
-import Button from '../../../components/shared/Button';
+import { useForm } from "react-hook-form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+
+type FormData = {
+  currentPassword: string;
+  newPassword: string;
+  confirmPassword: string;
+};
 
 export default function ChangePassword() {
-    const [form] = Form.useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<FormData>();
 
-    const onFinish = async (values: any) => {
-        console.log(values);
-    };
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+  };
 
-    return (
-        <div className="flex flex-col mt-[6%]">
-            <div className="flex items-center justify-center mt-10">
-                <div className="w-full lg:w-2/3  rounded-xl  pb-5 ">
-                    <ConfigProvider
-                        theme={{
-                            components: {},
-                        }}
-                    >
-                        <Form onFinish={onFinish} layout="vertical" form={form}>
-                            <span className=" text-[20px] font-semibold text-[#B8B8B8]">Current password</span>
-                            <Form.Item
-                                name="currentPassword"
-                                className="text-black"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: 'Please input your current password!',
-                                    },
-                                    {
-                                        min: 6,
-                                        message: 'Please input your current password!',
-                                    },
-                                ]}
-                            >
-                                <Input.Password
-                                    className="h-12 bg-[#212526] placeholder-textGray rounded-xl border-none mt-1"
-                                    placeholder="enter your password "
-                                />
-                            </Form.Item>
-                            <span className=" text-[20px] font-semibold text-[#B8B8B8]">New Password</span>
-                            <Form.Item
-                                name="newPassword"
-                                className="text-[#B8B8B8]"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: 'Please input your new password!',
-                                    },
-                                    {
-                                        min: 6,
-                                        message: 'Password must be at least 6 characters',
-                                    },
-                                ]}
-                            >
-                                <Input.Password
-                                    placeholder="Enter your password"
-                                    className="h-12 bg-[#212526]  rounded-xl border-none mt-1"
-                                />
-                            </Form.Item>
+  // Watch newPassword to validate confirmPassword matches
+  const newPassword = watch("newPassword");
 
-                            <span className=" text-[20px] font-semibold text-[#B8B8B8]">Confirm Password</span>
-                            <Form.Item
-                                name="confirmPassword"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: 'Please confirm your new password!',
-                                    },
-                                ]}
-                            >
-                                <Input.Password
-                                    className="h-12 bg-[#212526]  rounded-xl border-none mt-1"
-                                    placeholder="Enter your password"
-                                />
-                            </Form.Item>
-                            <Form.Item>
-                                <ConfigProvider
-                                    theme={{
-                                        components: {
-                                            Button: {
-                                                defaultBg: '',
-
-                                                defaultBorderColor: '',
-                                                defaultActiveBorderColor: '',
-                                                defaultColor: '',
-                                                defaultActiveColor: '',
-                                            },
-                                        },
-                                    }}
-                                >
-                                    <Button
-                                        htmlType="submit"
-                                        className="bg-gradient-to-r from-yellow-300 to-orange-400 text-black font-bold text-lg px-6  rounded-full transform transition-all duration-300 ease-in-out 0.5s ease hover:from-orange-400 w-full mt-4 "
-                                    >
-                                        Submit
-                                    </Button>
-                                </ConfigProvider>
-                            </Form.Item>
-                        </Form>
-                    </ConfigProvider>
-                </div>
+  return (
+    <div className="flex flex-col mt-[6%]">
+      <div className="flex items-center justify-center mt-10">
+        <div className="w-full lg:w-2/3 rounded-xl pb-5">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div>
+              <Label className="text-[#B8B8B8] text-[20px] font-semibold">
+                Current password
+              </Label>
+              <Input
+                type="currentPassword"
+                placeholder="Enter your password"
+                className="h-12 bg-[#212526] placeholder:text-gray-400 rounded-xl border-none mt-1 text-[#B8B8B8]"
+                {...register("currentPassword", {
+                  required: "Please input your current password!",
+                  minLength: {
+                    value: 6,
+                    message: "Current password must be at least 6 characters",
+                  },
+                })}
+              />
+              {errors.currentPassword && (
+                <p className="text-red-500 mt-1 text-sm">
+                  {errors.currentPassword.message}
+                </p>
+              )}
             </div>
+
+            <div>
+              <Label className="text-[#B8B8B8] text-[20px] font-semibold">
+                New Password
+              </Label>
+              <Input
+                type="newPassword"
+                placeholder="Enter your new password"
+                className="h-12 bg-[#212526] placeholder:text-gray-400 rounded-xl border-none mt-1 text-[#B8B8B8]"
+                {...register("newPassword", {
+                  required: "Please input your new password!",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters",
+                  },
+                })}
+              />
+              {errors.newPassword && (
+                <p className="text-red-500 mt-1 text-sm">
+                  {errors.newPassword.message}
+                </p>
+              )}
+            </div>
+
+            <div>
+              <Label className="text-[#B8B8B8] text-[20px] font-semibold">
+                Confirm Password
+              </Label>
+              <Input
+                type="confirmPassword"
+                placeholder="Confirm your new password"
+                className="h-12 bg-[#212526] placeholder:text-gray-400 rounded-xl border-none mt-1 text-[#B8B8B8]"
+                {...register("confirmPassword", {
+                  required: "Please confirm your new password!",
+                  validate: (value) =>
+                    value === newPassword || "Passwords do not match",
+                })}
+              />
+              {errors.confirmPassword && (
+                <p className="text-red-500 mt-1 text-sm">
+                  {errors.confirmPassword.message}
+                </p>
+              )}
+            </div>
+
+            <Button
+              type="submit"
+              className="bg-gradient-to-r from-yellow-300 to-orange-400 text-black font-semibold text-lg px-6 w-full mt-4 h-10"
+            >
+              Submit
+            </Button>
+          </form>
         </div>
-    );
+      </div>
+    </div>
+  );
 }

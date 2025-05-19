@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import JoditEditor from "jodit-react";
-import Button from "../layout/shared/Button";
+import Button from "@/components/layout/shared/Button";
 
 export default function AboutUS() {
   const editor = useRef(null);

@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import JoditEditor from "jodit-react";
-import Button from "../layout/shared/Button";
+import Button from "@/components/layout/shared/Button";
 
-export default function TermsCondition() {
+export default function PrivacyPolicy() {
   const editor = useRef(null);
 
   const [content, setContent] = useState("");

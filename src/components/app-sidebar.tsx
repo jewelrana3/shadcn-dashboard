@@ -30,6 +30,11 @@ const data = {
     },
 
     {
+      title: "FAQ",
+      url: "/faq",
+    },
+
+    {
       title: "Settings",
       url: "#",
       icon: Settings2,
@@ -52,7 +57,7 @@ const data = {
         },
         {
           title: "Privacy & Policy",
-          url: "Privacy-Policy",
+          url: "/privacy-policy",
         },
         {
           title: "Terms & Conditions",

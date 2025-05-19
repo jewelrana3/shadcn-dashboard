@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import {
   Form,
   FormControl,
@@ -5,17 +7,20 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form";
+} from "@/components/ui/form";
 import { useForm } from "react-hook-form";
-import { Input } from "../ui/input";
+import { MdOutlineModeEdit } from "react-icons/md";
 import { useEffect } from "react";
+
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 type ProfileFormData = {
   name: string;
   email: string;
 };
 
-export default function EditProfile() {
+export default function Profile() {
   const form = useForm<ProfileFormData>({
     defaultValues: {
       name: "",
@@ -50,6 +55,13 @@ export default function EditProfile() {
             <div>
               <h3 className="font-semibold text-2xl">jahid</h3>
             </div>
+          </div>
+          <div className="">
+            <Link to="/edit-profile">
+              <Button className=" flex items-center justify-center space-x-2 cursor-pointer w-36 border border-[#BBB8B8]">
+                <MdOutlineModeEdit className="text-xl mr-2" /> Edit Profile
+              </Button>
+            </Link>
           </div>
         </div>
 

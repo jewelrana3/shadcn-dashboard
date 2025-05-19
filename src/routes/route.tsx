@@ -1,19 +1,22 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Dashboard from "@/components/dashboard/dashboard/Dashboard";
 import ErrorPage from "@/error/ErrorPage";
-import AboutUS from "@/components/setting/About";
-import User from "@/components/dashboard/dashboard/User";
-import { Category } from "@/components/dashboard/category/Category";
-import PrivacyPolicy from "@/components/setting/PrivacyPolicy";
-import TermsCondition from "@/components/setting/TermsCondition";
-import Profile from "@/components/profile/Profile";
-import EditProfile from "@/components/profile/EditProfile";
 import ResetPasswordForm from "@/pages/authentication/NewPassword";
 import Login from "@/pages/authentication/Login";
 import ForgetPassword from "@/pages/authentication/ForgetPassword";
 import VerifyOtp from "@/pages/authentication/VerifyOtp";
-import ChangePassword from "@/components/profile/ChangePassword";
+import AboutUS from "@/pages/setting/About";
+import PrivacyPolicy from "@/pages/setting/PrivacyPolicy";
+import TermsCondition from "@/pages/setting/TermsCondition";
+import Notifications from "@/pages/notifications/Notifications";
+import Profile from "@/pages/profile/Profile";
+import EditProfile from "@/pages/profile/EditProfile";
+import ChangePassword from "@/pages/profile/ChangePassword";
+import Dashboard from "@/pages/dashboard/dashboard/Dashboard";
+import User from "@/pages/dashboard/dashboard/User";
+import { Category } from "@/pages/dashboard/category/Category";
+import Faq from "@/pages/faq/FAQ";
+
 // import Login from "../pages/authentication/Login";
 // import ErrorPage from "../pages/error/ErrorPage";
 // import Notification from "../pages/dashboard/Notification";
@@ -42,16 +45,15 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Dashboard /> },
       { path: "user", element: <User /> },
-      //   { path: "venue-list", element: <VenueList /> },
+
       { path: "category", element: <Category /> },
       //   { path: "subscriber", element: <Subscriber /> },
-      //   { path: "faq", element: <FAQ /> },
-      //   { path: "venue-details", element: <VenueDetail /> },
+      { path: "faq", element: <Faq /> },
 
       { path: "about", element: <AboutUS /> },
       { path: "privacy-policy", element: <PrivacyPolicy /> },
       { path: "terms-condition", element: <TermsCondition /> },
-      //   { path: "notifications", element: <Notification /> },
+      { path: "notifications", element: <Notifications /> },
       { path: "profile", element: <Profile /> },
       { path: "edit-profile", element: <EditProfile /> },
       { path: "change-password", element: <ChangePassword /> },

@@ -1,21 +1,23 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import ErrorPage from "@/error/ErrorPage";
-import ResetPasswordForm from "@/pages/authentication/NewPassword";
-import Login from "@/pages/authentication/Login";
-import ForgetPassword from "@/pages/authentication/ForgetPassword";
-import VerifyOtp from "@/pages/authentication/VerifyOtp";
-import AboutUS from "@/pages/setting/About";
-import PrivacyPolicy from "@/pages/setting/PrivacyPolicy";
-import TermsCondition from "@/pages/setting/TermsCondition";
-import Notifications from "@/pages/notifications/Notifications";
-import Profile from "@/pages/profile/Profile";
-import EditProfile from "@/pages/profile/EditProfile";
-import ChangePassword from "@/pages/profile/ChangePassword";
-import Dashboard from "@/pages/dashboard/dashboard/Dashboard";
-import User from "@/pages/dashboard/dashboard/User";
-import { Category } from "@/pages/dashboard/category/Category";
-import Faq from "@/pages/faq/FAQ";
+import ResetPasswordForm from "@/adminDashboardPage/authentication/NewPassword";
+import Login from "@/adminDashboardPage/authentication/Login";
+import ForgetPassword from "@/adminDashboardPage/authentication/ForgetPassword";
+import VerifyOtp from "@/adminDashboardPage/authentication/VerifyOtp";
+import AboutUS from "@/adminDashboardPage/setting/About";
+import PrivacyPolicy from "@/adminDashboardPage/setting/PrivacyPolicy";
+import TermsCondition from "@/adminDashboardPage/setting/TermsCondition";
+
+import Profile from "@/adminDashboardPage/profile/Profile";
+import EditProfile from "@/adminDashboardPage/profile/EditProfile";
+import ChangePassword from "@/adminDashboardPage/profile/ChangePassword";
+import Dashboard from "@/adminDashboardPage/dashboard/dashboard/Dashboard";
+import User from "@/adminDashboardPage/dashboard/dashboard/User";
+import Faq from "@/adminDashboardPage/faq/FAQ";
+import { Category } from "@/adminDashboardPage/dashboard/category/Category";
+// import { Category } from "@/adminDashboardPage/dashboard/category/Category";
+// import Faq from "@/adminDashboardPage/faq/FAQ";
 
 // import Login from "../pages/authentication/Login";
 // import ErrorPage from "../pages/error/ErrorPage";
@@ -53,10 +55,11 @@ const router = createBrowserRouter([
       { path: "about", element: <AboutUS /> },
       { path: "privacy-policy", element: <PrivacyPolicy /> },
       { path: "terms-condition", element: <TermsCondition /> },
-      { path: "notifications", element: <Notifications /> },
+
       { path: "profile", element: <Profile /> },
       { path: "edit-profile", element: <EditProfile /> },
       { path: "change-password", element: <ChangePassword /> },
+      // { path: "notification", element: <Notification /> },
     ],
   },
   { path: "/login", element: <Login /> },

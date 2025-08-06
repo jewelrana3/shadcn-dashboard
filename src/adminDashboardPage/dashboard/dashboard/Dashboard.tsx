@@ -1,12 +1,12 @@
-import Card from "./Card";
 import Chart from "./Chart";
+import { OrderCard } from "./OrderCard";
 import SellerChart from "./SellerChart";
 
 export default function Dashboard() {
   return (
     <div className="">
       <div className="">
-        <Card />
+        <OrderCard />
       </div>
       <div className="col-span-8">
         <Chart />

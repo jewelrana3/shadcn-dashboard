@@ -1,10 +1,8 @@
-("");
-
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom"; // or useRouter from next/navigation
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
+import loginLogo from "../../../public/login.jpg";
 type FormData = {
   otp: string;
 };
@@ -25,13 +23,15 @@ export default function VerifyOtp() {
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="flex items-center justify-center pl-8 bg-[#212526] rounded-md px-2">
+      <div className="flex items-center justify-center pl-8  px-2">
         <div className="w-[500px]">
-          <div className="space-y-3 text-center my-10 text-[#B8B8B8]">
-            <h1 className="text-3xl font-medium mt-2">Verify OTP</h1>
-            <p>
-              Please check your email. We have sent a code to contact @gmail.com
-            </p>
+          <div className="flex items-center justify-center">
+            <div className="text-center space-y-3">
+              <img src={loginLogo} alt="login" className="mx-auto" />
+              <p className="text-lg mb-5">
+                Please check your email. We have sent @gmail.com
+              </p>
+            </div>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="my-5 space-y-6">
@@ -48,7 +48,7 @@ export default function VerifyOtp() {
                 })}
                 placeholder="Enter 6-digit OTP"
                 maxLength={6}
-                className="w-[300px] text-center tracking-widest text-xl bg-[#212526] border border-[#b8b8b8] text-[#B8B8B8]"
+                className="w-[300px] text-center tracking-widest text-xl  border border-[#b8b8b8] text-[#B8B8B8]"
               />
             </div>
             {errors.otp && (
@@ -57,12 +57,12 @@ export default function VerifyOtp() {
 
             <Button
               type="submit"
-              className="bg-gradient-to-r from-yellow-300 to-orange-400 text-black font-bold text-lg px-6  w-full mt-4"
+              className="btn-bg font-bold h-12 text-lg px-6  w-full mt-4"
             >
               Verify
             </Button>
 
-            <div className="text-lg flex items-center justify-between gap-2 mb-8 text-[#B8B8B8] px-4">
+            <div className="text-lg flex items-center justify-between gap-2 mb-8  px-4">
               <p>Didn't receive the code?</p>
               <p
                 className="text-[#79CAA1] font-semibold underline cursor-pointer"

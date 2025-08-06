@@ -42,7 +42,7 @@ const Faq = () => {
       {data?.map((item) => (
         <div key={item.id}>
           <div
-            className="flex justify-between items-center gap-5 p-2 cursor-pointer duration-500 bg-[#212526] my-2 rounded-md text-[#B8B8B8]"
+            className="flex justify-between items-center gap-5 p-2 cursor-pointer duration-500  my-2 rounded-md text-[#B8B8B8]"
             onClick={() => toggleAccordion(item.id)}
           >
             <h3 className=" text-[18px] font-normal leading-[30px]">

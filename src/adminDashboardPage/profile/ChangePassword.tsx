@@ -36,7 +36,7 @@ export default function ChangePassword() {
               <Input
                 type="currentPassword"
                 placeholder="Enter your password"
-                className="h-12 bg-[#212526] placeholder:text-gray-400 rounded-xl border-none mt-1 text-[#B8B8B8]"
+                className="h-12  placeholder:text-gray-400 rounded-xl border-none mt-1 text-[#B8B8B8]"
                 {...register("currentPassword", {
                   required: "Please input your current password!",
                   minLength: {
@@ -59,7 +59,7 @@ export default function ChangePassword() {
               <Input
                 type="newPassword"
                 placeholder="Enter your new password"
-                className="h-12 bg-[#212526] placeholder:text-gray-400 rounded-xl border-none mt-1 text-[#B8B8B8]"
+                className="h-12  placeholder:text-gray-400 rounded-xl border-none mt-1 text-[#B8B8B8]"
                 {...register("newPassword", {
                   required: "Please input your new password!",
                   minLength: {
@@ -82,7 +82,7 @@ export default function ChangePassword() {
               <Input
                 type="confirmPassword"
                 placeholder="Confirm your new password"
-                className="h-12 bg-[#212526] placeholder:text-gray-400 rounded-xl border-none mt-1 text-[#B8B8B8]"
+                className="h-12  placeholder:text-gray-400 rounded-xl border-none mt-1 text-[#B8B8B8]"
                 {...register("confirmPassword", {
                   required: "Please confirm your new password!",
                   validate: (value) =>

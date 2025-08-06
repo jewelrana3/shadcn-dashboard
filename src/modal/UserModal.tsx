@@ -21,7 +21,7 @@ const UserModal = ({ isOpen, onClose }: UserDetailProps) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="bg-[#212526] p-6 rounded-xl text-[#B8B8B8E5] ">
+      <div className=" p-6 rounded-xl text-[#B8B8B8E5] ">
         <div className="flex justify-between items-center -mt-2">
           <h2 className="text-xl font-semibold">User List Details</h2>
         </div>

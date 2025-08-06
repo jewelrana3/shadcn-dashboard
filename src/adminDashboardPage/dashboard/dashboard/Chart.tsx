@@ -32,7 +32,7 @@ export default function Chart() {
   //   };
 
   return (
-    <div className="my-4 bg-[#212526] shadow-md rounded-lg px-3 pt-1 text-textGray">
+    <div className="my-4  shadow-md rounded-lg px-3 pt-1 text-textGray">
       <div className="flex items-center justify-between my-4">
         <h1 className="">Total user statics</h1>
         <div className="flex justify-center items-center gap-7">

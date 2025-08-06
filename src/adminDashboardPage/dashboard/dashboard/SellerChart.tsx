@@ -25,7 +25,7 @@ const data = [
 
 export default function SellerChart() {
   return (
-    <div className="bg-[#212526] text-textGray p-2 rounded-md">
+    <div className=" text-textGray p-2 rounded-md">
       <div className="flex items-center justify-between">
         <h1 className="">Total seller</h1>
         <select defaultValue="Year" className="w-28 h-[30px]">

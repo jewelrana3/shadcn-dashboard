@@ -119,7 +119,7 @@ export default function User() {
       <Table>
         {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
         <TableHeader>
-          <TableRow className="bg-[#212526] h-12">
+          <TableRow className=" h-12">
             <TableHead className="w-[100px] rounded-tl-lg">Invoice</TableHead>
             <TableHead>Name</TableHead>
             <TableHead>Address</TableHead>
